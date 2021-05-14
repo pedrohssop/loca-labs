@@ -47,5 +47,36 @@ namespace LocaLabs.Tests.Domain.ValueObjects
             Cpf _cpf = cpf;
             Assert.Equal(validExpected, _cpf.IsValid);
         }
+        
+        [Fact(DisplayName = "Cpf equals operator")]
+        public void CpfEquals()
+        {
+            Cpf cpf1 = "110.357.466.35";
+            Cpf cpf2 = "11035746635";
+
+            Assert.True(cpf1 == cpf2);
+        }
+
+        [Fact(DisplayName = "Cpf not equals operator")]
+        public void CpfNotEquals()
+        {
+            Cpf cpf1 = "110.357.466.35";
+            Cpf cpf2 = "11035746641";
+
+            Assert.True(cpf1 != cpf2);
+        }
+
+        [Fact(DisplayName = "Cpf formatter and unformatter")]
+        public void CpfFormat()
+        {
+            var unformated = "11035746641";
+            var formated = "110.357.466-41";
+
+            Cpf cpfFormated = formated;
+            Cpf cpfUnformated = unformated;
+
+            Assert.Equal(cpfUnformated.Formated, formated);
+            Assert.Equal(cpfFormated.Unformated, unformated);
+        }
     }
 }

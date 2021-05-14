@@ -149,7 +149,7 @@ namespace LocaLabs.Domain.ValueObjects
             formated[3] = formated[7] = Dot;
 
             for (int i = 0, j = 0; i < 14; i++)
-                if (formated[i] != default(char))
+                if (formated[i] == default(char))
                     formated[i] = value[j++]; 
 
             return formated.ToString();
