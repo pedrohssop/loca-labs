@@ -29,6 +29,8 @@ namespace LocaLabs.Tests.Domain.ValueObjects
         [InlineData("123.456.789.123", false)]
 
         // Invalidos por criatividade :)
+        [InlineData("", false)]
+        [InlineData(null, false)]
         [InlineData("blablablaba", false)]
         [InlineData("asd87as98d7", false)]
         [InlineData("123.123.123", false)]
@@ -47,7 +49,7 @@ namespace LocaLabs.Tests.Domain.ValueObjects
             Cpf _cpf = cpf;
             Assert.Equal(validExpected, _cpf.IsValid);
         }
-        
+
         [Fact(DisplayName = "Cpf equals operator")]
         public void CpfEquals()
         {
