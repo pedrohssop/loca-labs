@@ -3,19 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocaLabs.Domain", "LocaLabs.Domain\LocaLabs.Domain.csproj", "{B36EF732-EF8A-44BB-8FD0-BAE6C7644959}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocaLabs.Domain", "LocaLabs.Domain\LocaLabs.Domain.csproj", "{B36EF732-EF8A-44BB-8FD0-BAE6C7644959}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocaLabs.Application", "LocaLabs.Application\LocaLabs.Application.csproj", "{6490A18B-0521-4B3D-BCE6-28496A08CC18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocaLabs.Application", "LocaLabs.Application\LocaLabs.Application.csproj", "{6490A18B-0521-4B3D-BCE6-28496A08CC18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocaLabs.Infra", "LocaLabs.Infra\LocaLabs.Infra.csproj", "{472D4FC7-E639-4B8D-A8D0-D0486C8E2AD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocaLabs.Infra", "LocaLabs.Infra\LocaLabs.Infra.csproj", "{472D4FC7-E639-4B8D-A8D0-D0486C8E2AD1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{5B9BAEA7-2A1D-4FBA-9C7C-5AE2E3E2818E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{15A87755-BFF8-4E33-8469-BEFAAEFB0D33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocaLabs.Tests", "LocaLabs.Tests\LocaLabs.Tests.csproj", "{245DD5DB-972E-4268-8C9F-0D2C6B22B75B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocaLabs.Tests", "LocaLabs.Tests\LocaLabs.Tests.csproj", "{245DD5DB-972E-4268-8C9F-0D2C6B22B75B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LocaLabs.Api", "LocaLabs.Api\LocaLabs.Api.csproj", "{EC3666DE-AF74-472C-ADA6-AF6869BFE72C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocaLabs.Api", "LocaLabs.Api\LocaLabs.Api.csproj", "{EC3666DE-AF74-472C-ADA6-AF6869BFE72C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Items", "Items", "{2D8B705D-9740-4CFE-9069-468EBF71776B}"
+	ProjectSection(SolutionItems) = preProject
+		dev-db.sqlite3 = dev-db.sqlite3
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

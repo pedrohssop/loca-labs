@@ -4,7 +4,7 @@ using System.Text;
 
 namespace LocaLabs.Application.Services
 {
-    internal interface IEncryptService
+    public interface IEncryptService
     {
         string GetHashFrom(string value);
     }
