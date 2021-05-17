@@ -10,7 +10,7 @@ namespace LocaLabs.Application.Commands.Base
     public abstract class Handler<T, U> : IRequestHandler<T, CommandOutput<U>>
         where T : Command<U>
     {
-        private INotificationService Notifier { get; }
+        protected INotificationService Notifier { get; }
 
         public Handler(INotificationService notifier)
         {

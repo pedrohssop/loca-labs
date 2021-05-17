@@ -1,10 +1,7 @@
-﻿using LocaLabs.Api.Models;
-using LocaLabs.Api.Services;
+﻿using LocaLabs.Api.Services;
 using LocaLabs.Application.Commands.Users.CreateOperator;
 using LocaLabs.Application.Commands.Users.LogIn;
-using LocaLabs.Application.Services;
 using LocaLabs.Domain.Entities;
-using LocaLabs.Domain.ValueObjects;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -46,7 +43,7 @@ namespace LocaLabs.Api.Controllers
         }
 
         [AllowAnonymous]
-        [HttpPost("operator/signup")]
+        [HttpPost("operators/signup")]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
         public async Task<IActionResult> OperatorSignUp(

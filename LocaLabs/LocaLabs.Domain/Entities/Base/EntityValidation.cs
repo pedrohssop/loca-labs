@@ -6,7 +6,7 @@
         public readonly string Reason;
 
         public EntityValidation(string reason, string field) =>
-            (Field, Reason) = (reason, field);
+            (Field, Reason) = (field, reason);
 
         public override string ToString() =>
             $"{Field}: {Reason}";
