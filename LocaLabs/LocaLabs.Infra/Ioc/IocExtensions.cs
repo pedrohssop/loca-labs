@@ -39,6 +39,7 @@ namespace Microsoft.Extensions.DependencyInjection
             var repositoryType = typeof(Repository);
             var repositories = Assembly.GetExecutingAssembly()
                 .DefinedTypes
+                .Where(w => w.BaseType != null)
                 .Where(w => w.BaseType.IsAssignableTo(repositoryType))
                 .Select(s => new
                 {

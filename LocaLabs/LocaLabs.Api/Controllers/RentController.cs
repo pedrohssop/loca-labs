@@ -15,7 +15,7 @@ namespace LocaLabs.Api.Controllers
     [Route("rents")]
     public class RentController : ControllerBase
     {
-        [HttpGet("simulate")]
+        [HttpPost("simulate")]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
         [Authorize]
@@ -32,7 +32,7 @@ namespace LocaLabs.Api.Controllers
         [HttpPut("check")]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
-        [Authorize]
+        [Authorize(Roles = "operator")]
         public async Task<IActionResult> CheckList(
             [FromServices] IOutputBuilderService output, [FromServices] IMediator dispatcher, [FromBody] RegisterCheckListCmd cmd, CancellationToken token)
         {

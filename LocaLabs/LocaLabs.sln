@@ -17,11 +17,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocaLabs.Tests", "LocaLabs.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LocaLabs.Api", "LocaLabs.Api\LocaLabs.Api.csproj", "{EC3666DE-AF74-472C-ADA6-AF6869BFE72C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Items", "Items", "{2D8B705D-9740-4CFE-9069-468EBF71776B}"
-	ProjectSection(SolutionItems) = preProject
-		dev-db.sqlite3 = dev-db.sqlite3
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
