@@ -13,7 +13,7 @@ namespace LocaLabs.Infra.Data.Base
     { 
     }
 
-    public abstract class BaseRepository<TEntity> : Repository where TEntity : Entity
+    internal abstract class BaseRepository<TEntity> : Repository where TEntity : Entity
     {
         protected DataContext Ctx { get; }
         protected INotificationService Notifier { get; }
@@ -36,9 +36,9 @@ namespace LocaLabs.Infra.Data.Base
             return false;
         }
 
-        public async ValueTask SaveEntity(TEntity entity, CancellationToken token)
+        public async ValueTask SaveEntity<T>(T entity, CancellationToken token) where T : Entity
         {
-            var set = Ctx.Set<TEntity>();
+            var set = Ctx.Set<T>();
 
             await set.AddAsync(entity, token);
             await Ctx.SaveChangesAsync(token);

@@ -1,9 +1,14 @@
-﻿namespace LocaLabs.Domain.Enums
+﻿using System;
+
+namespace LocaLabs.Domain.Enums
 {
+    [Flags]
     public enum FuelTypes : byte
     {
-        Gasoline = 0,
-        Alcoll = 1,
-        Oil = 2,
+        Gasoline = 1,
+        Alcoll = 2,
+        Flex = 3,
+        Gas = 4,
+        Oil = 8,
     }
 }

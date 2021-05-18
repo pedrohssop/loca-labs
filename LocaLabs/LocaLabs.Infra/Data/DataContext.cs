@@ -13,10 +13,12 @@ namespace LocaLabs.Infra.Data
 
         public DbSet<User> Users { get; set; }
         public DbSet<Client> Clients { get; set; }
-        public DbSet<CarBrand> CarBrands { get; set; }
+        public DbSet<CarBrand> Brands { get; set; }
+        public DbSet<Car> Cars { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new CarMapping());
             modelBuilder.ApplyConfiguration(new UserMapping());
             modelBuilder.ApplyConfiguration(new ClientMapping());
             modelBuilder.ApplyConfiguration(new CarBrandMapping());

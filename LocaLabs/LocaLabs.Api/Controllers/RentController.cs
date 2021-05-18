@@ -1,25 +1,24 @@
 ﻿using LocaLabs.Api.Services;
-using LocaLabs.Application.Commands.Cars.Rents.Schedule;
-using LocaLabs.Application.Commands.Clients.CreateClient;
+using LocaLabs.Application.Commands.Cars.Rents.RegisterCheckList;
+using LocaLabs.Application.Commands.Cars.Rents.Simulate;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace LocaLabs.Api.Controllers
 {
     [ApiController]
-    [Route("clients")]
-    public class ClientController : ControllerBase
+    [Route("rents")]
+    public class RentController : ControllerBase
     {
-        [HttpPost]
+        [HttpGet("simulate")]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
-        [Authorize(Roles = "operator")]
-        public async Task<IActionResult> RegisterNewClient(
-            [FromServices] IOutputBuilderService output, [FromServices] IMediator dispatcher, [FromBody] CreateClientCmd cmd, CancellationToken token)
+        [Authorize]
+        public async Task<IActionResult> Simulate(
+            [FromServices] IOutputBuilderService output, [FromServices] IMediator dispatcher, [FromBody] RentSimulateCmd cmd, CancellationToken token)
         {
             var result = await dispatcher.Send(cmd, token);
             if (result.IsValid)
@@ -28,15 +27,13 @@ namespace LocaLabs.Api.Controllers
             return BadRequest(output.CreateOutput());
         }
 
-        [HttpPost("rents/schedule")]
+        [HttpPut("check")]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
-        [Authorize(Roles = "client")]
-        public async Task<IActionResult> SheduleRent(
-            [FromServices] IOutputBuilderService output, [FromServices] IMediator dispatcher, [FromBody] ScheduleRentCmd cmd, CancellationToken token)
+        [Authorize]
+        public async Task<IActionResult> CheckList(
+            [FromServices] IOutputBuilderService output, [FromServices] IMediator dispatcher, [FromBody] RegisterCheckListCmd cmd, CancellationToken token)
         {
-            cmd.AssignClient(Guid.Parse(User.Identity.Name));
-
             var result = await dispatcher.Send(cmd, token);
             if (result.IsValid)
                 return Ok(output.CreateOutput(result.Data));
