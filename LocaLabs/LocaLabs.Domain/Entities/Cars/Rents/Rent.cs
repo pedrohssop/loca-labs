@@ -25,10 +25,11 @@ namespace LocaLabs.Domain.Entities
             Cost = TotalHours * Car.HourValue;
         }
 
-        public Rent(Guid id, Guid carId, Guid clientId, DateTime createdAt, DateTime start, DateTime end, bool completed)
+        public Rent(Guid id, Guid carId, Guid clientId, DateTime createdAt, DateTime start, DateTime end, bool completed, decimal cost)
             : base(id, createdAt)
         {
             End = end;
+            Cost = cost;
             CarId = carId;
             Start = start;
             ClientId = clientId;

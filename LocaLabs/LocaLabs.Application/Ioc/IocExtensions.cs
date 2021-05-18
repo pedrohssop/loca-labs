@@ -17,6 +17,7 @@ namespace Microsoft.Extensions.DependencyInjection
 
         private static void AddServices(IServiceCollection services)
         {
+            services.AddScoped<IFileService, FileService>();
             services.AddScoped<IEncryptService, EncryptService>();
             services.AddScoped<INotificationService, NotificationService>();
         }

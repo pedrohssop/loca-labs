@@ -4,6 +4,7 @@ using LocaLabs.Domain.Entities;
 using LocaLabs.Domain.ValueObjects;
 using LocaLabs.Infra.Data.Base;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -30,5 +31,8 @@ namespace LocaLabs.Infra.Data.Entities.Clients
                 .Where(w => w.Cpf == cpf.Unformated)
                 .FirstOrDefaultAsync(token);
         }
+
+        public async ValueTask<Option<Client>> FindById(Guid id, CancellationToken token) =>
+            await Ctx.Clients.FindAsync(id, token);
     }
 }

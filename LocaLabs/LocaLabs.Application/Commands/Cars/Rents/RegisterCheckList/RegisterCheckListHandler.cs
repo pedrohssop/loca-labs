@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace LocaLabs.Application.Commands.Cars.Rents.RegisterCheckList
 {
-    internal class RegisterCheckListHandler : Handler<RegisterCheckListCmd, Option<Rent>>
+    public class RegisterCheckListHandler : Handler<RegisterCheckListCmd, Option<Rent>>
     {
         public RegisterCheckListHandler(INotificationService notifier, IRentRepository rentRepo)
             : base(notifier)

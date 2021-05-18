@@ -1,6 +1,8 @@
-﻿using LocaLabs.Domain.Entities;
+﻿using LocaLabs.Domain.Abstractions;
+using LocaLabs.Domain.Entities;
 using LocaLabs.Infra.Data;
 using LocaLabs.Infra.Data.Base;
+using LocaLabs.Infra.Templates;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System.Data;
@@ -24,6 +26,8 @@ namespace Microsoft.Extensions.DependencyInjection
                     s.MigrationsAssembly("LocaLabs.Infra")));
 
             services.AddScoped<DataContext, DataContext>();
+            services.AddScoped<ITemplateContentService, LocalFileTemplateContentService>();
+            services.AddScoped<ITemplateGenerator, HandlebarTemplateGenerator>();
 
             InjectAllRepositories(services);
 

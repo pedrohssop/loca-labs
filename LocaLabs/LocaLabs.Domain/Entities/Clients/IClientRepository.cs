@@ -1,5 +1,6 @@
 ﻿using LanguageExt;
 using LocaLabs.Domain.ValueObjects;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -15,5 +16,7 @@ namespace LocaLabs.Domain.Entities
         public ValueTask AddClient(Client client, CancellationToken token);
 
         public ValueTask<Option<Client>> FindByCpf(Cpf cpf, CancellationToken token);
+
+        public ValueTask<Option<Client>> FindById(Guid id, CancellationToken token);
     }
 }
